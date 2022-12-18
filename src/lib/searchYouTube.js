@@ -12,11 +12,9 @@ var searchYouTube = (query, callback) => {
   //https://app-hrsei-api.herokuapp.com/api/recastly/videos
 
   $.ajax({
-    url: 'https://app-hrsei-api.herokuapp.com/api/recastly/videos',
+    url: 'https://app-hrsei-api.herokuapp.com/api/recastly/videos?q=' + query,
     type: 'GET', //send it through get method
-    data: {
-      q: query
-    },
+    contentType: 'application/json; charset=utf-8',
     success: (data) => {
       callback(data);
     },
